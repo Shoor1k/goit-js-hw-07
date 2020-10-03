@@ -6,7 +6,6 @@ const onFocusInputTextArea = inputTextArea.addEventListener(`blur`, (event) => {
   if (event.currentTarget.value.length == inputTextArea.dataset.length) {
     inputTextArea.classList.add(`valid`);
     inputTextArea.classList.remove(`invalid`);
-    // inputTextArea.setAttribute(`id`, `validation-input .valid`);
   } else if (event.currentTarget.value.length == "") {
     inputTextArea.classList.remove(`invalid`, `valid`);
   } else {

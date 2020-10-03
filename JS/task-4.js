@@ -1,20 +1,18 @@
-const counterValue = document.querySelector(`#value`);
+let counterValue = 0;
+const textAreaVelue = document.querySelector(`#value`);
 const buttuncouter = document.querySelectorAll(`#counter button`);
 
-const handleButtonDecrementClick = (value) => {
-  const decrement = buttuncouter[0].addEventListener(`click`, (event) => {
-    value.textContent--;
-  });
-
-  return decrement;
-};
-const handleButtonIncrementClick = (value) => {
-  const increment = buttuncouter[1].addEventListener(`click`, (event) => {
-    value.textContent++;
-  });
-
-  return increment;
+const decrement = () => {
+  textAreaVelue.textContent--;
+  counterValue = textAreaVelue.textContent;
+  return counterValue;
 };
 
-handleButtonDecrementClick(counterValue);
-handleButtonIncrementClick(counterValue);
+const increment = () => {
+  textAreaVelue.textContent++;
+  counterValue = textAreaVelue.textContent;
+  return counterValue;
+};
+
+buttuncouter[0].addEventListener(`click`, decrement);
+buttuncouter[1].addEventListener(`click`, increment);
